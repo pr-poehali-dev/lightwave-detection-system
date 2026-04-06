@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 function CountdownWidget() {
-  const eventDate = new Date("2026-05-15T19:00:00")
+  const eventDate = new Date("2026-04-10T19:00:00")
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 })
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function CountdownWidget() {
 
 function DressCode() {
   const [active, setActive] = useState(0)
-  const options = ["Романтик", "Вечерний", "Casual"]
+  const options = ["Чёрный", "Серебро", "Total Black"]
 
   useEffect(() => {
     const id = setInterval(() => setActive((p) => (p + 1) % options.length), 2000)
@@ -53,8 +53,8 @@ function DressCode() {
           key={opt}
           className="px-4 py-2 rounded-full text-sm font-medium transition-colors"
           animate={{
-            backgroundColor: active === i ? "hsl(340 70% 55%)" : "hsl(340 25% 94%)",
-            color: active === i ? "white" : "hsl(340 40% 40%)",
+            backgroundColor: active === i ? "hsl(0 0% 78%)" : "hsl(0 0% 15%)",
+            color: active === i ? "hsl(0 0% 6%)" : "hsl(0 0% 60%)",
             scale: active === i ? 1.05 : 1,
           }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -76,8 +76,8 @@ function LocationWidget() {
       >
         📍
       </motion.div>
-      <span className="font-serif text-xl text-foreground text-center">Ресторан «Примавера»</span>
-      <span className="text-xs text-muted-foreground">ул. Садовая, 12</span>
+      <span className="font-serif text-xl text-foreground text-center">ул. Связистов, 164</span>
+      <span className="text-xs text-muted-foreground">10 апреля 2026, 19:00</span>
     </div>
   )
 }
@@ -110,7 +110,7 @@ export function FeaturesSection() {
             </div>
             <div className="mt-4">
               <h3 className="font-serif text-xl text-foreground">До праздника</h3>
-              <p className="text-muted-foreground text-sm mt-1">15 мая 2026, начало в 19:00</p>
+              <p className="text-muted-foreground text-sm mt-1">10 апреля 2026, начало в 19:00</p>
             </div>
           </motion.div>
 
@@ -128,7 +128,7 @@ export function FeaturesSection() {
             </div>
             <div className="mt-4">
               <h3 className="font-serif text-xl text-foreground">Дресс-код</h3>
-              <p className="text-muted-foreground text-sm mt-1">Романтичный вечерний образ.</p>
+              <p className="text-muted-foreground text-sm mt-1">Чёрный, серебро, total black.</p>
             </div>
           </motion.div>
 
