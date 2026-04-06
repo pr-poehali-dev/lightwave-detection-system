@@ -2,9 +2,15 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const showcaseImages = [
-  "/modern-architecture-building-exterior-minimal.jpg",
   "/fashion-model-editorial-portrait-dramatic-lighting.jpg",
   "/interior-design-minimalist-living-room-natural-lig.jpg",
+  "/fashion-photography-editorial-black-and-white.jpg",
+]
+
+const captions = [
+  "Анастасия",
+  "Место встречи",
+  "Особенный вечер",
 ]
 
 export function ShowcaseSection() {
@@ -29,7 +35,7 @@ export function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Галерея
+          Атмосфера
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -50,11 +56,14 @@ export function ShowcaseSection() {
             >
               <motion.img
                 src={src}
-                alt={`Изображение ${i + 1}`}
+                alt={captions[i]}
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+                <p className="font-serif text-white text-xl italic">{captions[i]}</p>
+              </div>
             </motion.div>
           ))}
         </div>

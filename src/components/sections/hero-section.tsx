@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "/minimal-architecture-portfolio-with-clean-lines.jpg",
+  "/fashion-model-editorial-portrait-dramatic-lighting.jpg",
   "/fashion-photography-editorial-black-and-white.jpg",
-  "/modern-ui-design-portfolio-mockup.jpg",
+  "/interior-design-minimalist-living-room-natural-lig.jpg",
 ]
 
 export function HeroSection() {
@@ -37,7 +37,7 @@ export function HeroSection() {
         >
           <img
             src={images[0] || "/placeholder.svg"}
-            alt="Портфолио 1"
+            alt="Фото 1"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -51,7 +51,7 @@ export function HeroSection() {
         >
           <img
             src={images[1] || "/placeholder.svg"}
-            alt="Портфолио 2"
+            alt="Фото 2"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -65,20 +65,23 @@ export function HeroSection() {
         >
           <img
             src={images[2] || "/placeholder.svg"}
-            alt="Портфолио 3"
+            alt="Фото 3"
             className="w-full h-full object-cover"
           />
         </motion.div>
       </div>
 
       <motion.div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
+        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 gap-4"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
       >
+        <p className="text-sm uppercase tracking-[0.3em] text-primary/70 font-light mix-blend-difference">
+          Приглашение
+        </p>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
-          Ваши работы, <em className="italic">в фокусе</em>.
+          Анастасия, <em className="italic">23</em>.
         </h1>
       </motion.div>
 

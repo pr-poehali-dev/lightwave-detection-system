@@ -1,28 +1,28 @@
 import type React from "react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
-const articles = [
+const program = [
   {
-    title: "Искусство визуального сторителлинга",
-    category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Сбор гостей и приветственные напитки",
+    category: "19:00",
+    image: "/interior-design-minimalist-living-room-natural-lig.jpg",
   },
   {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
+    title: "Торжественный ужин",
+    category: "19:30",
+    image: "/fashion-photography-editorial-black-and-white.jpg",
+  },
+  {
+    title: "Тосты, поздравления и подарки",
+    category: "21:00",
+    image: "/modern-architecture-building-exterior-minimal.jpg",
+  },
+  {
+    title: "Танцы и живая музыка до рассвета",
+    category: "22:00",
     image: "/personal-branding-digital-marketing.jpg",
-  },
-  {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
-  },
-  {
-    title: "Минимализм в дизайне портфолио",
-    category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
   },
 ]
 
@@ -43,15 +43,14 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Программа вечера
         </motion.p>
 
         <div className="divide-y divide-border">
-          {articles.map((article, i) => (
-            <motion.a
+          {program.map((item, i) => (
+            <motion.div
               key={i}
-              href="#"
-              className="group flex items-center justify-between py-6 relative"
+              className="group flex items-center justify-between py-6 relative cursor-default"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -62,17 +61,16 @@ export function InsightsSection() {
               data-clickable
             >
               <div className="flex-1">
-                <span className="text-xs text-muted-foreground uppercase tracking-wider">{article.category}</span>
+                <span className="text-xs text-primary uppercase tracking-wider font-medium">{item.category}</span>
                 <h3 className="font-serif text-xl md:text-2xl text-foreground mt-1 group-hover:text-primary transition-colors">
-                  {article.title}
+                  {item.title}
                 </h3>
               </div>
-              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-            </motion.a>
+              <Icon name="Heart" className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all" />
+            </motion.div>
           ))}
         </div>
 
-        {/* Floating hover image */}
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
@@ -88,8 +86,8 @@ export function InsightsSection() {
               transition={{ duration: 0.2 }}
             >
               <img
-                src={articles[hoveredIndex].image || "/placeholder.svg"}
-                alt={articles[hoveredIndex].title}
+                src={program[hoveredIndex].image || "/placeholder.svg"}
+                alt={program[hoveredIndex].title}
                 className="w-full h-auto"
               />
             </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-const portfolioItems = [
+const memories = [
   "/portfolio-website-design-preview-modern.jpg",
   "/photography-portfolio-website-clean.jpg",
   "/architecture-firm-website-minimal.jpg",
@@ -10,8 +10,7 @@ const portfolioItems = [
 ]
 
 export function CarouselSection() {
-  // Duplicate for seamless loop
-  const items = [...portfolioItems, ...portfolioItems]
+  const items = [...memories, ...memories]
 
   return (
     <section className="bg-primary py-24 overflow-hidden">
@@ -22,7 +21,7 @@ export function CarouselSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Создано авторами для авторов.
+          Каждый момент — <em className="italic">особенный</em>.
         </motion.h2>
       </div>
 
@@ -44,7 +43,7 @@ export function CarouselSection() {
             >
               <img
                 src={src || "/placeholder.svg"}
-                alt={`Пример портфолио ${(i % portfolioItems.length) + 1}`}
+                alt={`Воспоминание ${(i % memories.length) + 1}`}
                 className="w-full h-auto"
               />
             </div>

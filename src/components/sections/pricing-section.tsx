@@ -1,20 +1,29 @@
 import { motion } from "framer-motion"
-import { Check } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
-const plans = [
+const wishes = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Хочу прийти!",
+    emoji: "🥂",
+    description: "Жду с нетерпением",
+    features: [
+      "Обязательно буду",
+      "Приду с подарком",
+      "Готов(а) танцевать всю ночь",
+      "Приду вовремя, обещаю",
+    ],
   },
   {
-    name: "Про",
-    price: "2 900",
-    period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    name: "Уже еду!",
+    emoji: "🌹",
+    description: "Не могу дождаться",
+    features: [
+      "Буду с цветами",
+      "Приготовил(а) тост",
+      "Буду первым(ой) на месте",
+      "Подарок уже упакован",
+      "Сюрприз для именинницы",
+    ],
     popular: true,
   },
 ]
@@ -29,54 +38,43 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Будешь с нами?</h2>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">
+            Мы ждём только близких — тех, кто всегда рядом.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {plans.map((plan, i) => (
+          {wishes.map((wish, i) => (
             <motion.div
               key={i}
-              className={`relative bg-background rounded-xl p-8 ticket-edge ${plan.popular ? "ring-2 ring-primary" : ""}`}
+              className={`relative bg-background rounded-xl p-8 ticket-edge ${wish.popular ? "ring-2 ring-primary" : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               data-clickable
             >
-              {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime text-foreground text-xs font-medium px-3 py-1 rounded-full">
-                  Популярный
+              {wish.popular && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+                  ❤️ С любовью
                 </span>
               )}
 
               <div className="text-center pb-6 border-b border-dashed border-border">
-                <h3 className="font-serif text-xl text-foreground">{plan.name}</h3>
-                <div className="mt-4 flex items-baseline justify-center gap-1">
-                  <span className="text-4xl md:text-5xl font-serif text-foreground">{plan.price}</span>
-                  <span className="text-muted-foreground">{plan.period}</span>
-                </div>
-                <p className="text-muted-foreground text-sm mt-2">{plan.description}</p>
+                <div className="text-4xl mb-3">{wish.emoji}</div>
+                <h3 className="font-serif text-2xl text-foreground">{wish.name}</h3>
+                <p className="text-muted-foreground text-sm mt-2">{wish.description}</p>
               </div>
 
-              <ul className="mt-6 space-y-3">
-                {plan.features.map((feature, j) => (
-                  <li key={j} className="flex items-center gap-3 text-foreground">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
+              <ul className="space-y-3 mt-6">
+                {wish.features.map((feature, j) => (
+                  <li key={j} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <Icon name="Check" className="w-4 h-4 text-primary flex-shrink-0" />
+                    {feature}
                   </li>
                 ))}
               </ul>
-
-              <button
-                className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
-                  plan.popular
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-secondary text-foreground hover:bg-accent/30"
-                }`}
-              >
-                Начать
-              </button>
             </motion.div>
           ))}
         </div>
