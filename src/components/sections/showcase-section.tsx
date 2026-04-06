@@ -1,73 +1,47 @@
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-
-const showcaseImages = [
-  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/f8d111d8-d860-48d3-8504-49662f4f4984.jpg",
-  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/a0523ac9-c821-47dc-a0bf-bdbf46c20e23.jpg",
-  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/ae3ba7fd-827d-4df5-825f-a94ddb594b72.jpg",
-]
-
-const captions = [
-  { title: "Рукодельница", sub: "создаю красоту своими руками" },
-  { title: "4 котика", sub: "они, конечно, главные в доме" },
-  { title: "В пути", sub: "путешествия и работа — моя жизнь" },
-]
+import { motion } from "framer-motion"
 
 export function ShowcaseSection() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  })
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [100, -100])
-  const y2 = useTransform(scrollYProgress, [0, 1], [150, -150])
-  const y3 = useTransform(scrollYProgress, [0, 1], [80, -80])
-
-  const yValues = [y1, y2, y3]
-
   return (
-    <section ref={containerRef} className="bg-background px-6 py-32 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-background px-6 py-24">
+      <div className="max-w-3xl mx-auto text-center">
         <motion.p
-          className="text-muted-foreground text-sm uppercase tracking-widest mb-8"
+          className="text-muted-foreground text-sm uppercase tracking-widest mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Это я
+          Немного о себе
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {showcaseImages.map((src, i) => (
-            <motion.div
-              key={i}
-              className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden group"
-              style={{ y: yValues[i] }}
-              initial={{ clipPath: "inset(100% 0 0 0)" }}
-              whileInView={{ clipPath: "inset(0 0 0 0)" }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 1,
-                delay: i * 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              data-clickable
-            >
-              <motion.img
-                src={src}
-                alt={captions[i]}
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="font-serif text-white text-xl italic">{captions[i].title}</p>
-                <p className="text-white/70 text-sm mt-1">{captions[i].sub}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
+        >
+          <span className="absolute -top-8 -left-4 text-8xl text-primary/20 font-serif leading-none select-none">"</span>
+          <p className="font-serif text-xl md:text-2xl leading-relaxed text-foreground/90 italic">
+            Я впервые планирую собрать такую разную тусовочку. Для кого-то я Ася, для кого-то Настя, или{" "}
+            <span className="not-italic font-semibold text-primary">"НАСТЯ ПОМОЙ КОФЕ-МАШИНКУ ИЛИ В УГОЛ ПОСТАВЛЮ"</span>,
+            бывшая одноклассница, Доча, какая-то девочка кассир из табачки, одногруппница (надеюсь любимая),
+            сменщица, кто-то кто оказался рядом очень вовремя и смог помочь, или просто крутая тёлка. ахахахах
+          </p>
+          <p className="font-serif text-xl md:text-2xl leading-relaxed text-foreground/90 italic mt-6">
+            Я надеюсь, что в вашей жизни я есть как яркий элемент, потому что каждый из вас определённо есть в моём сердечке.
+          </p>
+          <span className="absolute -bottom-12 -right-4 text-8xl text-primary/20 font-serif leading-none select-none">"</span>
+        </motion.div>
+
+        <motion.p
+          className="mt-16 text-2xl font-bold tracking-wide"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+        >
+          Люблю вас!!! До встречи 🤍
+        </motion.p>
       </div>
     </section>
   )
