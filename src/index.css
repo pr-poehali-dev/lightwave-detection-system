@@ -6,32 +6,32 @@
 
 @layer base {
   :root {
-    /* Birthday Rose & Gold Theme */
-    --background: 340 30% 99%;
-    --foreground: 340 40% 12%;
-    --surface: 340 30% 96%;
-    --ink: 340 40% 12%;
-    --iris: 340 70% 55%;
-    --lilac: 340 60% 88%;
-    --lime: 42 80% 78%;
-    --muted-foreground: 340 15% 48%;
+    /* Silver & Black Theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 92%;
+    --surface: 0 0% 10%;
+    --ink: 0 0% 92%;
+    --iris: 0 0% 72%;
+    --lilac: 0 0% 20%;
+    --lime: 0 0% 60%;
+    --muted-foreground: 0 0% 52%;
 
-    --card: 340 30% 97%;
-    --card-foreground: 340 40% 12%;
-    --popover: 340 30% 99%;
-    --popover-foreground: 340 40% 12%;
-    --primary: 340 70% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 340 25% 96%;
-    --secondary-foreground: 340 40% 12%;
-    --muted: 340 25% 96%;
-    --accent: 340 60% 88%;
-    --accent-foreground: 340 40% 12%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 0 0% 78%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 0 0% 12%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 92%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 340 20% 90%;
-    --input: 340 20% 90%;
-    --ring: 340 70% 55%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 72%;
 
     --radius: 0.75rem;
 

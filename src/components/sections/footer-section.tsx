@@ -4,7 +4,7 @@ export function FooterSection() {
   return (
     <footer className="relative bg-background px-6 py-24 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-tr from-rose-200 via-pink-100 to-yellow-100 opacity-50 blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-zinc-600 via-zinc-500 to-zinc-700 opacity-20 blur-3xl rounded-full" />
       </div>
 
       <div className="relative max-w-6xl mx-auto text-center">
