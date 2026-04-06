@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
   "/fashion-model-editorial-portrait-dramatic-lighting.jpg",
-  "/fashion-photography-editorial-black-and-white.jpg",
+  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/a0523ac9-c821-47dc-a0bf-bdbf46c20e23.jpg",
   "/interior-design-minimalist-living-room-natural-lig.jpg",
 ]
 
