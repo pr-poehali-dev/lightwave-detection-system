@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const showcaseImages = [
-  "/fashion-model-editorial-portrait-dramatic-lighting.jpg",
-  "/interior-design-minimalist-living-room-natural-lig.jpg",
-  "/fashion-photography-editorial-black-and-white.jpg",
+  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/f8d111d8-d860-48d3-8504-49662f4f4984.jpg",
+  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/a0523ac9-c821-47dc-a0bf-bdbf46c20e23.jpg",
+  "https://cdn.poehali.dev/projects/1cbbf7d5-6c83-4798-8bb0-1036b5751462/bucket/ae3ba7fd-827d-4df5-825f-a94ddb594b72.jpg",
 ]
 
 const captions = [
