@@ -19,7 +19,7 @@ export function FooterSection() {
             Настя, <em className="italic text-primary">23</em>.
           </h2>
           <p className="text-muted-foreground max-w-md mt-2">
-            10 апреля 2026 · 19:00 · ул. Связистов, 164
+            10 апреля 2026 · 20:00 · ул. Связистов, 164
           </p>
 
           <motion.a

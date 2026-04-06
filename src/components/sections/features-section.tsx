@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 function CountdownWidget() {
-  const eventDate = new Date("2026-04-10T19:00:00")
+  const eventDate = new Date("2026-04-10T20:00:00")
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 })
 
   useEffect(() => {
@@ -77,7 +77,7 @@ function LocationWidget() {
         📍
       </motion.div>
       <span className="font-serif text-xl text-foreground text-center">ул. Связистов, 164</span>
-      <span className="text-xs text-muted-foreground">10 апреля 2026, 19:00</span>
+      <span className="text-xs text-muted-foreground">10 апреля 2026, 20:00</span>
     </div>
   )
 }
@@ -110,7 +110,7 @@ export function FeaturesSection() {
             </div>
             <div className="mt-4">
               <h3 className="font-serif text-xl text-foreground">До праздника</h3>
-              <p className="text-muted-foreground text-sm mt-1">10 апреля 2026, начало в 19:00</p>
+              <p className="text-muted-foreground text-sm mt-1">10 апреля 2026, начало в 20:00</p>
             </div>
           </motion.div>
 
