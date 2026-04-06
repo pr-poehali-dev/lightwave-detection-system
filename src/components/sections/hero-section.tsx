@@ -77,7 +77,7 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
       >
-        <p className="text-sm uppercase tracking-[0.3em] text-primary/70 font-light mix-blend-difference">
+        <p style={{ fontFamily: "'Great Vibes', cursive" }} className="text-4xl md:text-5xl text-primary mix-blend-difference">
           Приглашение
         </p>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
