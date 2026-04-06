@@ -23,7 +23,7 @@ export function FooterSection() {
           </p>
 
           <motion.a
-            href="tel:+79001234567"
+            href="https://t.me/+FpmeIPqZg8o2MzQy"
             className="mt-4 inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium hover:bg-primary/90 transition-colors"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
