@@ -8,9 +8,9 @@ const showcaseImages = [
 ]
 
 const captions = [
-  "Анастасия",
-  "Место встречи",
-  "Особенный вечер",
+  { title: "Рукодельница", sub: "создаю красоту своими руками" },
+  { title: "4 котика", sub: "они, конечно, главные в доме" },
+  { title: "В пути", sub: "путешествия и работа — моя жизнь" },
 ]
 
 export function ShowcaseSection() {
@@ -35,7 +35,7 @@ export function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Атмосфера
+          Это я
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -61,8 +61,9 @@ export function ShowcaseSection() {
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-                <p className="font-serif text-white text-xl italic">{captions[i]}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
+                <p className="font-serif text-white text-xl italic">{captions[i].title}</p>
+                <p className="text-white/70 text-sm mt-1">{captions[i].sub}</p>
               </div>
             </motion.div>
           ))}
